@@ -1,0 +1,25 @@
+:root {
+  --blue-text-color: #3f6dff;
+}
+
+@font-face {
+  font-family: "PatrickHand";
+  src: url("@/assets/fonts/PatrickHand-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  font-family: "PatrickHand", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+  color: var(--blue-text-color);
+}

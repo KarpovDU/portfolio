@@ -1,0 +1,36 @@
+.paper {
+  position: relative;
+
+  .signature,
+  .text {
+    transform: rotate(2deg);
+    position: absolute;
+    color: var(--blue-text-color);
+    line-height: 32px;
+    font-size: 28px;
+  }
+
+  .text {
+    padding: 80px 50px 0 160px;
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 32px;
+
+      .row {
+        display: flex;
+
+        .title {
+          width: 140px;
+        }
+      }
+    }
+  }
+
+  .signature {
+    text-decoration: underline;
+    bottom: 105px;
+    right: 80px;
+  }
+}
