@@ -1,5 +1,5 @@
-import { Biography } from "./sections"
 import styles from "./app.module.scss"
+import { Biography } from "./sections"
 
 export const App = () => {
   return (
