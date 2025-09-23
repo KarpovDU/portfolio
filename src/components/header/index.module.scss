@@ -3,29 +3,18 @@
   @include flex(center, center);
   text-align: center;
   text-transform: uppercase;
-
-  $font-sizes: (
-    xl: $header-text-xl,
-    lg: $header-text-lg,
-    md: $header-text-md,
-    sm: $header-text-sm,
-  );
-
-  $image-widths: (
-    xl: $header-image-xl,
-    lg: $header-image-lg,
-    md: $header-image-md,
-    sm: $header-image-sm,
-  );
+  white-space: nowrap;
 
   .headerImage {
     width: $header-image-xl;
-
-    @each $bp, $w in $image-widths {
-      @include respond-max($bp) {
-        width: $w;
-      }
-    }
+    @include responsive(
+      width,
+      (
+        lg: $header-image-lg,
+        md: $header-image-md,
+        sm: $header-image-sm,
+      )
+    );
   }
 
   h1 {
@@ -35,10 +24,13 @@
     transform: translate(-50%, -120%);
     font-size: $header-text-xl;
 
-    @each $bp, $s in $font-sizes {
-      @include respond-max($bp) {
-        font-size: $s;
-      }
-    }
+    @include responsive(
+      font-size,
+      (
+        lg: $header-text-lg,
+        md: $header-text-md,
+        sm: $header-text-sm,
+      )
+    );
   }
 }

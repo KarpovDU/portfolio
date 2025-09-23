@@ -1,44 +1,31 @@
 .section {
-  max-width: 1200px;
-  @include flex-column(center);
-
   $gaps: (
-    xl: $spacing-xl,
     lg: $spacing-lg,
     md: $spacing-md,
     sm: $spacing-sm,
   );
 
-  $image-widths: (
-    lg: $portrait-image-lg,
-    md: $portrait-image-md,
-    sm: $portrait-image-sm,
-  );
+  max-width: 1200px;
+  @include flex-column(center);
+  gap: $spacing-xl;
+  @include responsive(gap, $gaps);
 
   .portraitImage {
-    @each $bp, $w in $image-widths {
-      @include respond-max($bp) {
-        width: $w;
-      }
-    }
-  }
-
-  @each $bp, $g in $gaps {
-    @include respond-max($bp) {
-      gap: $g;
-    }
+    @include responsive(
+      width,
+      (
+        lg: $portrait-image-lg,
+        md: $portrait-image-md,
+        sm: $portrait-image-sm,
+      )
+    );
   }
 
   .content {
     @include flex(center, space-between);
-
-    @each $bp, $g in $gaps {
-      @include respond-max($bp) {
-        @if $bp == xl {
-          @include flex-column(center);
-        }
-        gap: $g;
-      }
+    @include respond-max(xl) {
+      @include flex-column(center, center);
     }
+    @include responsive(gap, $gaps);
   }
 }
