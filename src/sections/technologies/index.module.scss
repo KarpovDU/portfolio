@@ -1,0 +1,43 @@
+.container {
+  max-width: 1200px;
+  @include flex-column(center);
+  gap: $spacing-xl;
+  @include responsive(
+    gap,
+    (
+      lg: $spacing-lg,
+      md: $spacing-md,
+      sm: $spacing-sm,
+    )
+  );
+
+  .books {
+    position: relative;
+    height: 700px;
+    width: 1150px;
+    .react,
+    .next,
+    .reactNative {
+      position: absolute;
+      width: 450px;
+    }
+
+    .react {
+      transform: rotate(-30deg) translate(5%, 20%);
+      z-index: 1;
+      left: 0;
+    }
+
+    .next {
+      z-index: 2;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    .reactNative {
+      transform: rotate(30deg) translate(-5%, 22%);
+      z-index: 3;
+      right: 0;
+    }
+  }
+}
