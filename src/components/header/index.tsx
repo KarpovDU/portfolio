@@ -3,13 +3,12 @@ import styles from "./index.module.scss"
 
 type HeaderProps = {
   children: string
-  width?: number
 }
 
-export const Header = ({ children, width = 600 }: HeaderProps) => {
+export const Header = ({ children }: HeaderProps) => {
   return (
     <div className={styles.container}>
-      <img alt="header-image" width={width} src={HeaderImage} />
+      <img alt="header-image" className={styles.headerImage} src={HeaderImage} />
       <h1>{children}</h1>
     </div>
   )

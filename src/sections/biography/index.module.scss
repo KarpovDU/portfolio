@@ -1,13 +1,44 @@
 .section {
   max-width: 1200px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 40px;
+  @include flex-column(center);
+
+  $gaps: (
+    xl: $spacing-xl,
+    lg: $spacing-lg,
+    md: $spacing-md,
+    sm: $spacing-sm,
+  );
+
+  $image-widths: (
+    lg: $portrait-image-lg,
+    md: $portrait-image-md,
+    sm: $portrait-image-sm,
+  );
+
+  .portraitImage {
+    @each $bp, $w in $image-widths {
+      @include respond-max($bp) {
+        width: $w;
+      }
+    }
+  }
+
+  @each $bp, $g in $gaps {
+    @include respond-max($bp) {
+      gap: $g;
+    }
+  }
 
   .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(center, space-between);
+
+    @each $bp, $g in $gaps {
+      @include respond-max($bp) {
+        @if $bp == xl {
+          @include flex-column(center);
+        }
+        gap: $g;
+      }
+    }
   }
 }

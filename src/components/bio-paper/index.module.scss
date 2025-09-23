@@ -1,28 +1,79 @@
 .paper {
   position: relative;
 
+  .paperImage {
+    @include responsive(
+      width,
+      (
+        lg: $paper-image-lg,
+        md: $paper-image-md,
+        sm: $paper-image-sm,
+      )
+    );
+  }
+
   .signature,
   .text {
     transform: rotate(2deg);
     position: absolute;
-    color: var(--blue-text-color);
-    line-height: 32px;
-    font-size: 28px;
+    color: $blue-color;
+    line-height: $paper-line-height-xl;
+    font-size: $paper-text-xl;
+
+    @include responsive(
+      line-height,
+      (
+        lg: $paper-line-height-lg,
+        md: $paper-line-height-md,
+        sm: $paper-line-height-sm,
+      )
+    );
+
+    @include responsive(
+      font-size,
+      (
+        lg: $paper-text-lg,
+        md: $paper-text-md,
+        sm: $paper-text-sm,
+      )
+    );
   }
 
   .text {
-    padding: 80px 50px 0 160px;
+    padding: 10% 7% 0 20%;
 
     .section {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 32px;
+      @include flex-column();
+      margin-bottom: $paper-line-height-lg;
+
+      @include responsive(
+        margin-bottom,
+        (
+          lg: $paper-line-height-lg,
+          md: $paper-line-height-md,
+          sm: $paper-line-height-sm,
+        )
+      );
 
       .row {
-        display: flex;
+        @include flex();
 
         .title {
-          width: 140px;
+          $paper-title-widths: (
+            lg: $paper-title-width-lg,
+            md: $paper-title-width-md,
+            sm: $paper-title-width-sm,
+          );
+
+          width: $paper-title-width-xl;
+          @include responsive(
+            width,
+            (
+              lg: $paper-title-width-lg,
+              md: $paper-title-width-md,
+              sm: $paper-title-width-sm,
+            )
+          );
         }
       }
     }
@@ -30,7 +81,7 @@
 
   .signature {
     text-decoration: underline;
-    bottom: 105px;
-    right: 80px;
+    bottom: 12.5%;
+    right: 10%;
   }
 }

@@ -15,7 +15,7 @@ export const BioPaper = ({ children }: { children: ReactNode }) => {
   return (
     <div className={styles.paper}>
       <div className={styles.text}>{children}</div>
-      <img alt="paper" src={PaperImage} />
+      <img alt="paper" src={PaperImage} className={styles.paperImage} />
       <div className={styles.signature}>@KarpovDU</div>
     </div>
   )

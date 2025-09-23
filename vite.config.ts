@@ -5,9 +5,21 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+        @use "@/styles/variables" as *;
+        @use "@/styles/breakpoints" as *;
+        @use "@/styles/mixins" as *;
+        `
+      }
+    }
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+  
 })
