@@ -9,7 +9,7 @@ export const Biography = () => {
     <section className={styles.section}>
       <Header>Bio & info</Header>
       <div className={styles.content}>
-        <img alt="my-photo" src={Portrait} />
+        <img alt="my-photo" src={Portrait} className={styles.portraitImage} />
         <BioPaper>
           {data.map(item => (
             <BioSection key={item.name} items={item.items} />

@@ -1,0 +1,22 @@
+@use "./breakpoints" as *;
+
+@mixin flex-column($ai: unset, $jc: unset) {
+  display: flex;
+  flex-direction: column;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin flex($ai: unset, $jc: unset) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
+@mixin responsive($property, $map) {
+  @each $bp, $value in $map {
+    @include respond-max($bp) {
+      #{$property}: $value;
+    }
+  }
+}
