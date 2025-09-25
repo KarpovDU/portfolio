@@ -9,6 +9,14 @@
   .content {
     margin: 20px 0 0 0;
     @include flex-column(center);
-    gap: 200px;
+    gap: calc($spacing-xl * 5);
+    @include responsive(
+      gap,
+      (
+        lg: calc($spacing-lg * 5),
+        md: calc($spacing-md * 5),
+        sm: calc($spacing-sm * 5),
+      )
+    );
   }
 }
