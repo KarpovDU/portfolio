@@ -15,29 +15,72 @@
     position: relative;
     height: 700px;
     width: 1150px;
+
+    @include respond-max(xl) {
+      width: unset;
+      height: unset;
+      @include flex-column(center, center);
+      :first-child {
+        .react {
+          transform: rotate(15deg);
+        }
+      }
+      a + a {
+        margin-top: -20%;
+        .next {
+          transform: rotate(-15deg);
+        }
+        .reactNative {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    .react {
+      transform: rotate(-30deg) translate(5%, 20%);
+      left: 0;
+    }
+
+    .next {
+      transform: translate(-50%, 0);
+      left: 50%;
+    }
+
+    .reactNative {
+      transform: rotate(30deg) translate(-5%, 22%);
+      right: 0;
+    }
+
     .react,
     .next,
     .reactNative {
       position: absolute;
       width: 450px;
+
+      @include responsive(
+        width,
+        (
+          xl: $tech-book-width-xl,
+          lg: $tech-book-width-lg,
+          md: $tech-book-width-md,
+          sm: $tech-book-width-sm,
+        )
+      );
+
+      @include respond-max(xl) {
+        position: static;
+        transform: none;
+      }
     }
 
-    .react {
-      transform: rotate(-30deg) translate(5%, 20%);
+    > *:nth-child(1) {
       z-index: 1;
-      left: 0;
     }
-
-    .next {
+    > *:nth-child(2) {
       z-index: 2;
-      left: 50%;
-      transform: translate(-50%, 0);
     }
-
-    .reactNative {
-      transform: rotate(30deg) translate(-5%, 22%);
+    > *:nth-child(3) {
       z-index: 3;
-      right: 0;
     }
   }
 }
