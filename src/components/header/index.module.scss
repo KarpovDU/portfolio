@@ -4,17 +4,11 @@
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
+  margin: 0 10px;
 
   .headerImage {
-    width: $header-image-xl;
-    @include responsive(
-      width,
-      (
-        lg: $header-image-lg,
-        md: $header-image-md,
-        sm: $header-image-sm,
-      )
-    );
+    max-width: 768px;
+    width: 100%;
   }
 
   h1 {
@@ -22,15 +16,6 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -120%);
-    font-size: $header-text-xl;
-
-    @include responsive(
-      font-size,
-      (
-        lg: $header-text-lg,
-        md: $header-text-md,
-        sm: $header-text-sm,
-      )
-    );
+    font-size: clamp(14px, 8vw, 48px);
   }
 }

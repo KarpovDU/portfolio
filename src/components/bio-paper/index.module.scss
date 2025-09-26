@@ -1,79 +1,46 @@
 .paper {
   position: relative;
+  display: flex;
 
   .paperImage {
-    @include responsive(
-      width,
-      (
-        lg: $paper-image-lg,
-        md: $paper-image-md,
-        sm: $paper-image-sm,
-      )
-    );
+    transform: rotate(2deg);
+    z-index: 1;
+    max-width: 717px;
+    width: 100%;
+    @include respond-max(xl) {
+      transform: none;
+    }
   }
 
   .signature,
   .text {
+    z-index: 2;
     transform: rotate(2deg);
     position: absolute;
     color: $blue-color;
-    line-height: $paper-line-height-xl;
-    font-size: $paper-text-xl;
+    font-size: clamp(12px, 100vw * 0.045, 28px);
 
-    @include responsive(
-      line-height,
-      (
-        lg: $paper-line-height-lg,
-        md: $paper-line-height-md,
-        sm: $paper-line-height-sm,
-      )
-    );
-
-    @include responsive(
-      font-size,
-      (
-        lg: $paper-text-lg,
-        md: $paper-text-md,
-        sm: $paper-text-sm,
-      )
-    );
+    @include respond-max(xl) {
+      transform: none;
+    }
   }
 
   .text {
-    padding: 10% 7% 0 20%;
+    @include flex-column;
+    aspect-ratio: 540 / 645;
+    margin-left: 18%;
+    margin-top: 8.5%;
+    --lh: 32.5px;
+    line-height: var(--lh);
+    gap: var(--lh);
+    height: 82.3%;
 
     .section {
       @include flex-column();
-      margin-bottom: $paper-line-height-lg;
-
-      @include responsive(
-        margin-bottom,
-        (
-          lg: $paper-line-height-lg,
-          md: $paper-line-height-md,
-          sm: $paper-line-height-sm,
-        )
-      );
-
       .row {
         @include flex();
-
         .title {
-          $paper-title-widths: (
-            lg: $paper-title-width-lg,
-            md: $paper-title-width-md,
-            sm: $paper-title-width-sm,
-          );
-
-          width: $paper-title-width-xl;
-          @include responsive(
-            width,
-            (
-              lg: $paper-title-width-lg,
-              md: $paper-title-width-md,
-              sm: $paper-title-width-sm,
-            )
-          );
+          width: 30%;
         }
       }
     }
@@ -81,7 +48,7 @@
 
   .signature {
     text-decoration: underline;
-    bottom: 12.5%;
+    bottom: 11%;
     right: 10%;
   }
 }
