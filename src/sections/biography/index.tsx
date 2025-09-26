@@ -7,7 +7,7 @@ export const Biography = () => {
   const data = biographyData
   return (
     <section className={styles.section}>
-      <Header>Bio & info</Header>
+      <Header>Biography</Header>
       <div className={styles.content}>
         <img alt="my-photo" src={Portrait} className={styles.portraitImage} />
         <BioPaper>

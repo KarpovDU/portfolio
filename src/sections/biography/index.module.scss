@@ -11,18 +11,17 @@
   @include responsive(gap, $gaps);
 
   .portraitImage {
-    @include responsive(
-      width,
-      (
-        lg: $portrait-image-lg,
-        md: $portrait-image-md,
-        sm: $portrait-image-sm,
-      )
-    );
+    transform: rotate(-10deg);
+    max-width: 368px;
+    width: 100%;
+    @include respond-max(xl) {
+      transform: none;
+    }
   }
 
   .content {
     @include flex(center, space-between);
+    gap: 40px;
     @include respond-max(xl) {
       @include flex-column(center, center);
     }
