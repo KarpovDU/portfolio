@@ -10,18 +10,18 @@ import TS from "@/assets/Pins/Code/TypeScript.svg"
 import Vite from "@/assets/Pins/Code/Vite.svg"
 import Webpack from "@/assets/Pins/Code/Webpack.svg"
 
-import CSSImage from "@/assets/Pins/style/CSS.svg"
-import Figma from "@/assets/Pins/style/Figma.svg"
-import MUI from "@/assets/Pins/style/MUI.svg"
-import SASS from "@/assets/Pins/style/SASS.svg"
-import Tailwind from "@/assets/Pins/style/Tailwind.svg"
+import CSS from "@/assets/Pins/Style/CSS.svg"
+import Figma from "@/assets/Pins/Style/Figma.svg"
+import MUI from "@/assets/Pins/Style/MUI.svg"
+import SASS from "@/assets/Pins/Style/SASS.svg"
+import Tailwind from "@/assets/Pins/Style/Tailwind.svg"
 
-import Bash from "@/assets/Pins/utils/Bash.svg"
-import Docker from "@/assets/Pins/utils/Docker.svg"
-import ESLint from "@/assets/Pins/utils/ESLint.svg"
-import GitHub from "@/assets/Pins/utils/GitHub.svg"
-import Prettier from "@/assets/Pins/utils/Prettier.svg"
-import VS from "@/assets/Pins/utils/VS.svg"
+import Bash from "@/assets/Pins/Utils/Bash.svg"
+import Docker from "@/assets/Pins/Utils/Docker.svg"
+import ESLint from "@/assets/Pins/Utils/ESLint.svg"
+import GitHub from "@/assets/Pins/Utils/GitHub.svg"
+import Prettier from "@/assets/Pins/Utils/Prettier.svg"
+import VS from "@/assets/Pins/Utils/VS.svg"
 
 type Pin = {
   name: string
@@ -100,7 +100,7 @@ export const pinsData: PinsGroup[] = [
     pins: [
       {
         name: "css",
-        image: CSSImage,
+        image: CSS,
         href: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started",
       },
       {
