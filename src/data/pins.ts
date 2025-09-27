@@ -10,10 +10,10 @@ import TS from "@/assets/Pins/Code/TypeScript.svg"
 import Vite from "@/assets/Pins/Code/Vite.svg"
 import Webpack from "@/assets/Pins/Code/Webpack.svg"
 
-import CSS from "@/assets/Pins/style/CSS.svg"
-import SASS from "@/assets/Pins/style/SASS.svg"
+import CSSImage from "@/assets/Pins/style/CSS.svg"
 import Figma from "@/assets/Pins/style/Figma.svg"
 import MUI from "@/assets/Pins/style/MUI.svg"
+import SASS from "@/assets/Pins/style/SASS.svg"
 import Tailwind from "@/assets/Pins/style/Tailwind.svg"
 
 import Bash from "@/assets/Pins/utils/Bash.svg"
@@ -100,7 +100,7 @@ export const pinsData: PinsGroup[] = [
     pins: [
       {
         name: "css",
-        image: CSS,
+        image: CSSImage,
         href: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Getting_started",
       },
       {
