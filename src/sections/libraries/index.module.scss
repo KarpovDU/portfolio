@@ -1,0 +1,182 @@
+.section {
+  max-width: 1200px;
+  width: 100%;
+  @include flex-column(center);
+  gap: $spacing-xl;
+  @include responsive(
+    gap,
+    (
+      lg: $spacing-lg,
+      md: $spacing-md,
+      sm: $spacing-sm,
+    )
+  );
+
+  .container {
+    width: 100%;
+    position: relative;
+    @include flex(center, center);
+
+    .backpack {
+      width: clamp(0px, 100% - 20px, 1200px);
+    }
+
+    .code,
+    .style,
+    .utils {
+      position: absolute;
+      left: 15%;
+      width: 70%;
+
+      .pin {
+        filter: drop-shadow(0px 0px 3px #000000);
+        height: clamp(0px, ((100vw - 20px) * 1 / 10), 100px);
+        @include respond-max(xl) {
+        }
+      }
+    }
+
+    .code {
+      top: 30%;
+      height: 30%;
+
+      a {
+        $positions: (
+          6: (
+            // Apollo
+            top: 12%,
+            left: 7%,
+          ),
+          5: (
+            // Node
+            top: 18%,
+            left: 23%,
+          ),
+          7: (
+            // Redux
+            top: 40%,
+            left: 10%,
+          ),
+          8: (
+            // RTL
+            top: 68%,
+            left: 3%,
+          ),
+          4: (
+            // Jest
+            top: 65%,
+            left: 20%,
+          ),
+          10: (
+            // Vite
+            top: 43%,
+            left: 32%,
+          ),
+          1: (
+            // GraphQL
+            top: 34%,
+            left: 51%,
+          ),
+          11: (
+            // Webpack
+            top: 67%,
+            left: 41%,
+          ),
+          9: (
+            // TS
+            top: 65%,
+            left: 59%,
+          ),
+          2: (
+            // HTML
+            top: 38%,
+            left: 70%,
+          ),
+          3: (
+            // JS
+            top: 63%,
+            left: 77%,
+          ),
+        );
+        @include children-positions($positions);
+      }
+    }
+
+    .utils {
+      top: 60%;
+      height: 12%;
+
+      a {
+        $positions: (
+          1: (
+            // Bash
+            top: 45%,
+            left: 32%,
+          ),
+          2: (
+            // Docker
+            top: 18%,
+            left: 16%,
+          ),
+          3: (
+            // Eslint
+            top: 25%,
+            left: 80%,
+          ),
+          4: (
+            // Github
+            top: 15%,
+            left: 48%,
+          ),
+          5: (
+            // Prettier
+            top: 35%,
+            left: 64%,
+          ),
+          6: (
+            // VSCode
+            top: 30%,
+            left: 0%,
+          ),
+        );
+        @include children-positions($positions);
+      }
+    }
+
+    .style {
+      top: 72%;
+      height: 25%;
+
+      a {
+        $positions: (
+          1: (
+            // CSS
+            top: 45%,
+            left: 80%,
+          ),
+          2: (
+            // SASS
+            top: 13%,
+            left: 60%,
+          ),
+          3: (
+            // FIGMA
+            top: 50%,
+            left: 10%,
+          ),
+          4: (
+            // MUI
+            top: 20%,
+            left: 27%,
+          ),
+          5: (
+            // TAILWIND
+            top: 60%,
+            left: 44%,
+          ),
+        );
+        @include children-positions($positions);
+      }
+    }
+  }
+}

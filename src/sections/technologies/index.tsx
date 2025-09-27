@@ -34,7 +34,7 @@ const books: Book[] = [
 
 export const Technologies = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.section}>
       <Header>Main technologies</Header>
       <div className={styles.books}>
         {books.map(book => (

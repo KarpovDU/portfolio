@@ -20,3 +20,14 @@
     }
   }
 }
+
+@mixin children-positions($map) {
+  @each $index, $props in $map {
+    &:nth-child(#{$index}) {
+      position: absolute;
+      @each $prop, $value in $props {
+        #{$prop}: #{$value};
+      }
+    }
+  }
+}

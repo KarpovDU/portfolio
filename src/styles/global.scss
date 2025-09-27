@@ -5,6 +5,14 @@
   font-style: normal;
 }
 
+body {
+  min-height: 100vh;
+  background-image: url("../assets/Background.png");
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 100% auto;
+}
+
 * {
   font-family: $font-main;
 }

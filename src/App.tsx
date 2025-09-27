@@ -1,5 +1,5 @@
 import styles from "./app.module.scss"
-import { Biography, Technologies } from "./sections"
+import { Biography, Libraries, Technologies } from "./sections"
 
 export const App = () => {
   return (
@@ -7,6 +7,7 @@ export const App = () => {
       <div className={styles.content}>
         <Biography />
         <Technologies />
+        <Libraries />
       </div>
     </div>
   )

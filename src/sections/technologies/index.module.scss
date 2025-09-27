@@ -1,4 +1,4 @@
-.container {
+.section {
   max-width: 1200px;
   @include flex-column(center);
   gap: $spacing-xl;
@@ -13,7 +13,7 @@
 
   .books {
     position: relative;
-    height: 700px;
+    height: 620px;
     width: 1150px;
 
     @include respond-max(xl) {

@@ -1,22 +1,13 @@
-.background {
-  min-height: 100vh;
-  background-image: url("./assets/Background.png");
-  background-repeat: repeat-y;
-  background-position: top center;
-  background-size: 100% auto;
-  @include flex(unset, center);
-
-  .content {
-    margin: 20px 0 0 0;
-    @include flex-column(center);
-    gap: calc($spacing-xl * 5);
-    @include responsive(
-      gap,
-      (
-        lg: calc($spacing-lg * 5),
-        md: calc($spacing-md * 5),
-        sm: calc($spacing-sm * 5),
-      )
-    );
-  }
+.content {
+  margin: 20px 0 0 0;
+  @include flex-column(center);
+  gap: calc($spacing-xl * 5);
+  @include responsive(
+    gap,
+    (
+      lg: calc($spacing-lg * 5),
+      md: calc($spacing-md * 5),
+      sm: calc($spacing-sm * 5),
+    )
+  );
 }
