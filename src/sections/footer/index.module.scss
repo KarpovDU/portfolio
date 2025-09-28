@@ -1,0 +1,13 @@
+.footer {
+  width: 100%;
+  background-color: rgba(#000, 0.8);
+  @include flex(center, center);
+
+  div {
+    padding: clamp(10px, 4vw, 40px);
+    font-size: clamp(14px, 2.5vw, 18px);
+    width: clamp(0px, 100vw, 1200px);
+    color: white;
+    font-family: "Roboto", sans-serif;
+  }
+}
