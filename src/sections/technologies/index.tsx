@@ -50,7 +50,15 @@ export const Technologies = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img alt={book.alt} src={book.src} className={book.className} />
+            <motion.img
+              initial={{ filter: "drop-shadow(0 0 0px rgba(255,255,255,0))" }}
+              whileHover={{
+                filter: ["drop-shadow(0 0 10px rgba(255,255,255))"],
+              }}
+              alt={book.alt}
+              src={book.src}
+              className={book.className}
+            />
           </motion.a>
         ))}
       </div>

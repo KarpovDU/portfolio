@@ -30,9 +30,18 @@ export const Libraries = () => {
             className={styles[pinsGroup.name]}
           >
             {pinsGroup.pins.map(pin => (
-              <a href={pin.href} target="_blank" rel="noopener noreferrer" key={pin.name}>
+              <motion.a
+                initial={{ filter: "drop-shadow(0 0 0px rgba(255,255,255,0))" }}
+                whileHover={{
+                  filter: ["drop-shadow(0 0 10px rgba(255,255,255))"],
+                }}
+                href={pin.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={pin.name}
+              >
                 <img src={pin.image} alt={pin.name} className={styles.pin} />
-              </a>
+              </motion.a>
             ))}
           </motion.div>
         ))}

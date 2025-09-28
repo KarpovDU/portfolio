@@ -21,15 +21,17 @@ export const Biography = () => {
     <section className={styles.section}>
       <Header>Biography</Header>
       <div className={styles.content}>
-        <motion.img
-          ref={ref}
-          initial={{ scale: 1.5, opacity: 0 }}
-          animate={controls}
-          transition={{ delay: 0.2 }}
-          alt="my-photo"
-          src={Portrait}
-          className={styles.portraitImage}
-        />
+        <div className={styles.rotate}>
+          <motion.img
+            ref={ref}
+            initial={{ scale: 1.5, opacity: 0 }}
+            animate={controls}
+            transition={{ delay: 0.2 }}
+            alt="my-photo"
+            src={Portrait}
+            className={styles.portraitImage}
+          />
+        </div>
         <BioPaper>
           {data.map(item => (
             <BioSection key={item.name} items={item.items} />
