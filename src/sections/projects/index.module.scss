@@ -1,0 +1,42 @@
+.section {
+  max-width: 1200px;
+  width: 100%;
+  @include flex-column(center);
+  gap: $spacing-xl;
+  @include responsive(
+    gap,
+    (
+      lg: $spacing-lg,
+      md: $spacing-md,
+      sm: $spacing-sm,
+    )
+  );
+
+  .container {
+    width: clamp(0px, 100% - 20px, 845px);
+    position: relative;
+    @include flex(center, center);
+
+    .tablet {
+      width: 100%;
+    }
+
+    .apps {
+      position: absolute;
+      top: 6%;
+      left: 9%;
+      height: 86%;
+      width: 80%;
+      @include flex-column();
+
+      .projects {
+        flex: 1;
+        @include flex();
+      }
+
+      .contacts {
+        @include flex(center, center);
+      }
+    }
+  }
+}
