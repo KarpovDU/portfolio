@@ -1,6 +1,7 @@
 import TabletImage from "@/assets/Tablet.png"
 import { Application, Header } from "@/components"
 import { contactsData, projectsData } from "@/data"
+import { motion } from "motion/react"
 import styles from "./index.module.scss"
 
 export const Projects = () => {
@@ -10,7 +11,13 @@ export const Projects = () => {
   return (
     <section className={styles.section}>
       <Header>Projects</Header>
-      <div className={styles.container}>
+      <motion.div
+        initial={{ opacity: 0, scale: 1.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, amount: "some" }}
+        transition={{ delay: 0.2 }}
+        className={styles.container}
+      >
         <img src={TabletImage} alt="tablet" className={styles.tablet} />
         <div className={styles.apps}>
           <div className={styles.projects}>
@@ -24,7 +31,7 @@ export const Projects = () => {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }
