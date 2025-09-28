@@ -10,12 +10,14 @@
   gap: $spacing-xl;
   @include responsive(gap, $gaps);
 
-  .portraitImage {
+  .rotate {
     transform: rotate(-10deg);
-    max-width: 368px;
-    width: 100%;
     @include respond-max(xl) {
       transform: none;
+    }
+    .portraitImage {
+      max-width: 368px;
+      width: 100%;
     }
   }
 

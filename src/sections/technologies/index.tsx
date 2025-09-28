@@ -2,6 +2,7 @@ import NextBook from "@/assets/Next.png"
 import ReactNativeBook from "@/assets/React native.png"
 import ReactBook from "@/assets/React.png"
 import { Header } from "@/components"
+import { motion } from "motion/react"
 import styles from "./index.module.scss"
 
 type Book = {
@@ -37,10 +38,28 @@ export const Technologies = () => {
     <section className={styles.section}>
       <Header>Main technologies</Header>
       <div className={styles.books}>
-        {books.map(book => (
-          <a key={book.alt} href={book.href} target="_blank" rel="noopener noreferrer">
-            <img alt={book.alt} src={book.src} className={book.className} />
-          </a>
+        {books.map((book, index) => (
+          <motion.a
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, amount: "some" }}
+            transition={{ delay: Number(`0.${index + 3}`) }}
+            className={styles.container}
+            key={book.alt}
+            href={book.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <motion.img
+              initial={{ filter: "drop-shadow(0 0 0px rgba(255,255,255,0))" }}
+              whileHover={{
+                filter: ["drop-shadow(0 0 10px rgba(255,255,255))"],
+              }}
+              alt={book.alt}
+              src={book.src}
+              className={book.className}
+            />
+          </motion.a>
         ))}
       </div>
     </section>

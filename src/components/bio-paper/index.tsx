@@ -1,5 +1,6 @@
 import PaperImage from "@/assets/Paper.png"
-import { useLayoutEffect, useRef, type ReactNode } from "react"
+import { motion, useAnimation, useInView } from "motion/react"
+import { useEffect, useLayoutEffect, useRef, type ReactNode } from "react"
 import styles from "./index.module.scss"
 
 export type BioRowProps = {
@@ -12,6 +13,15 @@ export type BioSectionProps = {
 
 export const BioPaper = ({ children }: { children: ReactNode }) => {
   const textRef = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
+  const controls = useAnimation()
+  const isInView = useInView(containerRef, { amount: "some", once: true })
+
+  useEffect(() => {
+    if (isInView) {
+      controls.start({ scale: 1, opacity: 1 })
+    }
+  }, [isInView, controls])
 
   const updateLineHeight = () => {
     if (!textRef.current) return
@@ -35,13 +45,19 @@ export const BioPaper = ({ children }: { children: ReactNode }) => {
   }, [])
 
   return (
-    <div className={styles.paper}>
+    <motion.div
+      ref={containerRef}
+      initial={{ scale: 1.5, opacity: 0 }}
+      animate={controls}
+      transition={{ delay: 0.4 }}
+      className={styles.paper}
+    >
       <div ref={textRef} className={styles.text}>
         {children}
       </div>
       <img alt="paper" src={PaperImage} className={styles.paperImage} />
       <div className={styles.signature}>@KarpovDU</div>
-    </div>
+    </motion.div>
   )
 }
 
