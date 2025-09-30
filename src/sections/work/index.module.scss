@@ -1,0 +1,59 @@
+.section {
+  max-width: 1200px;
+  @include flex-column(center);
+  gap: $spacing-xl;
+  @include responsive(
+    gap,
+    (
+      lg: $spacing-lg,
+      md: $spacing-md,
+      sm: $spacing-sm,
+    )
+  );
+
+  .container {
+    position: relative;
+    transform: rotate(-5deg);
+    @include respond-max(lg) {
+      transform: unset;
+    }
+
+    .image {
+      width: clamp(0px, 100vw - 20px, 686px);
+    }
+
+    .text {
+      position: absolute;
+      width: 74%;
+      height: 76.5%;
+      top: 11%;
+      left: 10%;
+      color: $blue-color;
+      @include flex-column();
+
+      .header {
+        @include flex(center, space-between);
+        .logo {
+          aspect-ratio: 5/3;
+          width: 50%;
+          object-fit: contain;
+        }
+        .title {
+          width: 50%;
+          font-size: clamp(14px, 5vw, 36px);
+          padding-bottom: 5%;
+          text-align: center;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+      }
+      .body {
+        height: 100%;
+        margin-left: 15%;
+        @include flex-column();
+        line-height: clamp(0px, ((100vw - 20px) / 686) * 56.5, 56px);
+        font-size: clamp(8px, 100vw * 0.03, 21px);
+      }
+    }
+  }
+}
