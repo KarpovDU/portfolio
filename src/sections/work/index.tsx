@@ -7,7 +7,7 @@ import { motion } from "motion/react"
 export const Work = () => {
   const data = experienceData
   return (
-    <section className={styles.section}>
+    <section id="experience" className={styles.section}>
       <Header>Experience</Header>
       <motion.div
         initial={{ opacity: 0, scale: 1.5 }}

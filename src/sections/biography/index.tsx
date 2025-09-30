@@ -18,7 +18,7 @@ export const Biography = () => {
 
   const data = biographyData
   return (
-    <section className={styles.section}>
+    <section id="biography" className={styles.section}>
       <Header>Biography</Header>
       <div className={styles.content}>
         <div className={styles.rotate}>
