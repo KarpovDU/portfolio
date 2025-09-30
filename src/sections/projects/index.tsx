@@ -9,8 +9,8 @@ export const Projects = () => {
   const contacts = contactsData
 
   return (
-    <section className={styles.section}>
-      <Header>Projects</Header>
+    <section id="projects" className={styles.section}>
+      <Header>Projects & Contacts</Header>
       <motion.div
         initial={{ opacity: 0, scale: 1.5 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -27,7 +27,9 @@ export const Projects = () => {
           </div>
           <div className={styles.contacts}>
             {contacts.map(contact => (
-              <Application key={contact.value} href={contact.href} value={contact.value} image={contact.image} />
+              <div key={contact.value}>
+                <Application href={contact.href} value={contact.value} image={contact.image} />
+              </div>
             ))}
           </div>
         </div>

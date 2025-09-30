@@ -1,0 +1,99 @@
+.navbar {
+  position: fixed;
+  width: 100vw;
+  height: 70px;
+  top: 0;
+  left: 0;
+  background: url("@/assets/Background.png") center top repeat-y;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: multiply;
+  z-index: 1000;
+  @include flex(center, center);
+  gap: clamp(10px, 4vw + 10px, 50px);
+  transition: height 0.3s ease;
+
+  .piece {
+    z-index: 1;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+    @include flex(center, center);
+
+    .pieceImage {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 50px;
+      width: clamp(100%, 100% + 4vw, 100% + 40px);
+      object-fit: fill;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    .pieceText {
+      @include flex(center, center);
+      gap: 5px;
+      color: $blue-color;
+      font-size: clamp(18px, 2.3vw, 24px);
+      text-wrap: nowrap;
+    }
+  }
+
+  .button {
+    display: none;
+  }
+
+  @include respond-max(lg) {
+    @include flex-column(center);
+    overflow-y: hidden;
+    height: 50px;
+    gap: 40px;
+
+    .button {
+      align-self: flex-end;
+      min-height: fit-content;
+      background-color: unset;
+      border: unset;
+      color: $blue-color;
+      min-height: 20px;
+      min-width: 30px;
+      padding: 0;
+      margin: 15px;
+      margin-right: 20px;
+      cursor: pointer;
+      @include flex-column(center, space-between);
+
+      .middle,
+      .bottom,
+      .top {
+        width: 100%;
+        height: 4px;
+        background-color: $blue-color;
+        border-radius: 2px;
+      }
+
+      .top,
+      .bottom {
+        transition: transform 0.3s ease;
+      }
+    }
+
+    > div {
+      width: calc(100% - 20px);
+      padding: 0 10px;
+    }
+
+    .piece {
+      width: 100%;
+
+      .pieceImage {
+        width: 100%;
+      }
+
+      .pieceText {
+        font-size: 24px;
+      }
+    }
+  }
+}

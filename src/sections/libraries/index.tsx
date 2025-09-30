@@ -8,7 +8,7 @@ export const Libraries = () => {
   const data = pinsData
 
   return (
-    <section className={styles.section}>
+    <section id="libraries" className={styles.section}>
       <Header>Libraries & Utils</Header>
       <div className={styles.container}>
         <motion.img
