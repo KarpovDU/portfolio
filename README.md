@@ -1,69 +1,63 @@
-# React + TypeScript + Vite
+<h2 align="center">
+  <a href="https://portfolio-ruby-chi-95.vercel.app/" target="_blank">PORFOLIO WEB PAGE</a>
+</h2>
+<div align="center">
+  <img width="3614" height="2279" alt="Group 4" src="https://github.com/user-attachments/assets/d635ebd9-5405-422b-9a4b-99e0f61e9bbf" />
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  
+![built-with-❤︎(1)](https://github.com/user-attachments/assets/932421ed-efec-4a65-93e6-5c1939a4ad96)
+<svg xmlns="http://www.w3.org/2000/svg" width="140.566668510437" height="35" viewBox="0 0 140.566668510437 35"><rect width="106.9000015258789" height="35" fill="#ad2946"/><rect x="106.9000015258789" width="33.666666984558105" height="35" fill="#fb2e72"/></svg>&nbsp;
+![made-with-typescript](https://github.com/user-attachments/assets/8ce366f6-966b-4209-9901-1526451fa845)
+<svg xmlns="http://www.w3.org/2000/svg" width="231.3333282470703" height="35" viewBox="0 0 231.3333282470703 35"><rect width="106.66666412353516" height="35" fill="#3044be"/><rect x="106.66666412353516" width="124.66666412353516" height="35" fill="#258af1"/></svg>&nbsp;
+![styled-with-scss](https://github.com/user-attachments/assets/3872d4a3-11c1-4179-aaa3-959705b2dd6f)
+<svg xmlns="http://www.w3.org/2000/svg" width="185.99999618530273" height="35" viewBox="0 0 185.99999618530273 35"><rect width="122.66666412353516" height="35" fill="#8c14b2"/><rect x="122.66666412353516" width="63.33333206176758" height="35" fill="#e279f2"/></svg>
+![GitHub watchers](https://img.shields.io/github/watchers/karpovdu/portfolio?style=for-the-badge&color=orange)
+![GitHub Repo stars](https://img.shields.io/github/stars/karpovdu/portfolio?style=for-the-badge&color=orange)
 
-Currently, two official plugins are available:
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Built With
 
-## Expanding the ESLint configuration
+My personal portfolio <a href="https://portfolio-ruby-chi-95.vercel.app/" target="_blank">KarpovDU</a> which features some of my github projects as well as my resume and technical skills.<br/>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project was built using these technologies.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React.js
+- SCSS
+- TypeScript
+- Vite
+- ESLint
+- Prettier
+- VSCode
+- Vercel
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## ✨ Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+**📖 Single-page Layout**
+
+**🎥 Animated components**
+
+**📱 Fully Responsive**
+
+
+## Getting Started
+
+Clone down this repository. You will need `node.js` and `git` installed globally on your machine.
+
+
+## 🛠 Installation and Setup Instructions
+
+1. Installation:
+```
+npm install
+```
+2. In the project directory, you can run:
+```
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Runs the app in the development mode. \
+Open [http://localhost:5173](http://localhost:5173) to view it in the browser. \
+The page will reload if you make edits.
