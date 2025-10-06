@@ -1,5 +1,5 @@
 <h2 align="center">
-  <a href="https://portfolio-ruby-chi-95.vercel.app/" target="_blank">PORFOLIO WEB PAGE</a>
+  <a href="https://karpovdu.vercel.app/" target="_blank">PORFOLIO WEB PAGE</a>
 </h2>
 <div align="center">
   <img width="3614" height="2279" alt="Group 4" src="https://github.com/user-attachments/assets/d635ebd9-5405-422b-9a4b-99e0f61e9bbf" />
@@ -20,7 +20,7 @@
 
 ## ⚙️ Built With
 
-My personal portfolio <a href="https://portfolio-ruby-chi-95.vercel.app/" target="_blank">KarpovDU</a> which features some of my github projects as well as my resume and technical skills.<br/>
+My personal portfolio <a href="https://karpovdu.vercel.app/" target="_blank">KarpovDU</a> which features some of my github projects as well as my resume and technical skills.<br/>
 
 This project was built using these technologies.
 
